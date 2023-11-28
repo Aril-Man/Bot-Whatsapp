@@ -1,6 +1,6 @@
 const { Client, LocalAuth } = require('whatsapp-web.js')
 const express = require('express');
-const qrcode = require('qr-image');
+const qrcode = require('qrcode');
 const fs = require("fs");
 const { handleChat } = require('./src/controller/chatController');
 
@@ -18,12 +18,11 @@ client.on('loading_screen', (percent, message) => {
 });
 
 
-client.on('qr',(qr) => {
+client.on('qr', async (qr) => {
     console.log("Generate QR Code...");
-    let qrCode = qrcode.image(qr, {type : "png"})
-    qrCode.pipe(fs.createWriteStream(process.cwd() + "/public/qr/qr.png"))
-
-    console.log(process.cwd() + "/public/qr/last.qr");
+    await qrcode.toDataURL(qr, (err, url) => {
+        console.log(url);
+    })
 })
 
 client.on('auth_failure', msg => {
