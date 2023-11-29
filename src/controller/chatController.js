@@ -26,10 +26,10 @@ async function handleChat(client, jid, message) {
             }
 
             // Send catalog product file
-            // let fileCatalog = MessageMedia.fromFilePath("./public/files/catalog-product.pdf")
-            // await await client.sendMessage(jid, fileCatalog, {
-            //     caption: flows.file_catalog
-            // })
+            let fileCatalog = MessageMedia.fromFilePath("./public/files/catalog-product.pdf")
+            await await client.sendMessage(jid, fileCatalog, {
+                caption: flows.file_catalog
+            })
         } else if (replaceMessage === "!bergabung") {
             // Send message for join the business
             await client.sendMessage(jid, flows.form_register)
