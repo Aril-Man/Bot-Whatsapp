@@ -26,7 +26,7 @@ async function handleChat(client, jid, message) {
             }
 
             // Send catalog product file
-            let fileCatalog = MessageMedia.fromFilePath("./public/files/catalog-product.pdf")
+            let fileCatalog = MessageMedia.fromFilePath("./public/files/new-catalog.pdf")
             await await client.sendMessage(jid, fileCatalog, {
                 caption: flows.file_catalog
             })
