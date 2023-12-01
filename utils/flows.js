@@ -1,5 +1,5 @@
 const flows = {
-    "message_greeting" : "*Assalamu'alaikum warahmatullahi wabarakatuh!*\n\nSelamat datang di Bisnis Syariah (Best Corporation). Kamu mau bisnis tapi bingung gimana mulainya?\n\nDengan Best Corporation kamu bisa mulai bisnis dengan modal Rp 2,6 jt aja loh...\n\nYuk telusuri lebih lanjut dengan ketik keyword di bawah ini untuk mengetahui seputar Best Corporation :\n\n- !info\n- !produk\n- !bergabung",
+    "message_greeting" : "*Assalamu'alaikum warahmatullahi wabarakatuh!*\n\nSelamat datang di Bisnis Syariah (Best Corporation). Kamu mau bisnis tapi bingung gimana mulainya?\n\nDengan Best Corporation kamu bisa mulai bisnis dengan modal Rp 2,6 jt aja kamu juga dapat product yang berkualitas loohh... \n\nYuk telusuri lebih lanjut dengan ketik keyword di bawah ini untuk mengetahui seputar Best Corporation :\n\n- !info\n- !produk\n- !order",
     "info_message" : "*Apa itu PT BEST (Best Corporation)?*\n\nPT Bandung Eco Sinergi Teknologi (PT BEST) adalah Perusahaan Penjualan Langsung (Direct Selling) yang memasarkan produk-produk berkualitas dan sangat dibutuhkan oleh masyarakat.\n\nPT BEST telah memiliki legalitas yang lengkap dari Kementerian Perdagangan Republik Indonesia sejak Desember 2019 dengan NIB 8120001861974 serta telah terdaftar sebagai anggota Asosiasi Perusahaan Penjualan Langsung Indonesia (AP2LI).\n\nPT BEST berkomitmen untuk menjalankan program pemasaran dengan sistem Syariah sesuai dengan Fatwa DSN MUI Nomor 75/DSN-MUI/VII/2009 Tentang Pedoman Penjualan Langsung Berjenjang Syariah (PLBS).",
     "katalog_produk" : [
         {
@@ -79,7 +79,8 @@ Kode pos:
 
 Salam,
 *Azriel Fauzi Hermansyah*`,
-    "message_register": "*Silahkan isi formulir di atas lalu kirim ke https://wa.me/6289654591193*"
+    "message_register": "*Silahkan isi formulir di atas lalu kirim ke https://wa.me/6289654591193*",
+    "order": "*Hubungi nomor di bawah ini untuk order product yang kamu inginkan.*\n\n https://wa.me/6289654591193"
 }
 
 module.exports = {

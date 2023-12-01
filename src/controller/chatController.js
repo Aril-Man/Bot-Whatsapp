@@ -30,11 +30,9 @@ async function handleChat(client, jid, message) {
             await await client.sendMessage(jid, fileCatalog, {
                 caption: flows.file_catalog
             })
-        } else if (replaceMessage === "!bergabung") {
-            // Send message for join the business
-            await client.sendMessage(jid, flows.form_register)
-            await sleep(2000)
-            await client.sendMessage(jid, flows.message_register)
+        } else if (replaceMessage === "!order") {
+            // Send message for order
+            await client.sendMessage(jid, flows.order)
         } else if (replaceMessage === "!bisnis" && jid.includes("@g.us") || !jid.includes("@g.us")) {
             image = MessageMedia.fromFilePath("./public/img/best_corporation_syariah_cover.jpeg")
             await client.sendMessage(jid, image, {
