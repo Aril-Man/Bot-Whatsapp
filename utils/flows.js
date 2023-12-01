@@ -1,5 +1,5 @@
 const flows = {
-    "message_greeting" : "*Assalamu'alaikum warahmatullahi wabarakatuh!*\n\nSelamat datang di Bisnis Syariah (Best Corporation). Kamu mau bisnis tapi bingung gimana mulainya?\n\nDengan Best Corporation kamu bisa mulai bisnis dengan modal Rp 2,6 jt aja kamu juga dapat product yang berkualitas loohh... \n\nYuk telusuri lebih lanjut dengan ketik keyword di bawah ini untuk mengetahui seputar Best Corporation :\n\n- !info\n- !produk",
+    "message_greeting" : "*Assalamu'alaikum warahmatullahi wabarakatuh!*\n\nSelamat datang di Bisnis Syariah (Best Corporation). Kamu mau bisnis tapi bingung gimana mulainya?\n\nDengan Best Corporation kamu bisa mulai bisnis dengan modal Rp 2,6 jt aja kamu juga dapat product yang berkualitas loohh... \n\nYuk telusuri lebih lanjut dengan ketik keyword di bawah ini untuk mengetahui seputar Best Corporation :\n\n- !info\n- !produk\n- !reseller",
     "info_message" : "*Apa itu PT BEST (Best Corporation)?*\n\nPT Bandung Eco Sinergi Teknologi (PT BEST) adalah Perusahaan Penjualan Langsung (Direct Selling) yang memasarkan produk-produk berkualitas dan sangat dibutuhkan oleh masyarakat.\n\nPT BEST telah memiliki legalitas yang lengkap dari Kementerian Perdagangan Republik Indonesia sejak Desember 2019 dengan NIB 8120001861974 serta telah terdaftar sebagai anggota Asosiasi Perusahaan Penjualan Langsung Indonesia (AP2LI).\n\nPT BEST berkomitmen untuk menjalankan program pemasaran dengan sistem Syariah sesuai dengan Fatwa DSN MUI Nomor 75/DSN-MUI/VII/2009 Tentang Pedoman Penjualan Langsung Berjenjang Syariah (PLBS).",
     "katalog_produk" : [
         {
@@ -36,7 +36,7 @@ const flows = {
     ],
     "file_catalog" : "*Untuk melihat detail product lebih lanjut silahkan download file berikut.*",
     "form_register" : 
-`Form Pendaftaran PT BEST : 👇👇👇
+`Form Reseller PT BEST : 👇👇👇
 
 Nama Lengkap: 
 No ktp: 
@@ -57,8 +57,7 @@ No tlp ahli waris :
 NB: Nama pemiliki bank harus sesuai dengan yang Punya ID
 
 silahkan transfer pembelian :
-    First Order membership min 1 Hak Usaha ( 1 HU):
-Rp. 2.624.000,- (24.000 untuk ongkir dr PT BEST Bandung)
+    First Order membership min 1 Hak Usaha ( 1 HU): Rp. 2.600.000
 
 ke Rek BCA 👇👇
 7361208190
