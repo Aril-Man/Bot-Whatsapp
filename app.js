@@ -6,6 +6,14 @@ const { handleChat } = require('./src/controller/chatController');
 
 
 const client = new Client({
+    puppeteer: {
+        headless: true,
+        args: [
+            "--no-sandbox",
+            "--disable-setuid-sandbox",
+            "--unhandled-rejections=strict"
+        ]
+    },
     authStrategy: new LocalAuth(),
 });
 const app = express();
