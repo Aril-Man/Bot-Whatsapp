@@ -3,7 +3,8 @@ const express = require('express');
 const qrcode = require('qrcode-terminal');
 const fs = require("fs");
 const { handleChat } = require('./src/controller/chatController');
-
+const { router } = require('./src/router/broadcastRouter');
+const morgan = require('morgan');
 
 const client = new Client({
     puppeteer: {
@@ -45,6 +46,9 @@ client.on('disconnected', () => {
 client.on('message', async (message) => {
     await handleChat(client, message.from, message);
 })
+
+app.use(morgan('dev'))
+app.use("/api", router);
 
 app.listen(port, () => {
     console.log("Service running in port" , port);
