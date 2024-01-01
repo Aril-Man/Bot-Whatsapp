@@ -49,7 +49,12 @@ client.on('message', async (message) => {
 
 app.use(morgan('dev'))
 app.use("/api", router);
+app.locals.client = client;
 
 app.listen(port, () => {
     console.log("Service running in port" , port);
 })
+
+module.exports = {
+    app
+}
