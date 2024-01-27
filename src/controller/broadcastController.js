@@ -51,3 +51,45 @@ exports.handleBroadcast = (req, res) => {
         })
     }
 }
+
+exports.broadcastV2 = async (req, res) => {
+    const body = req.body;
+    try {
+
+        let content = body.content;
+        let phone = body.phone;
+
+        if ((content === "" || content === undefined) || (phone.length <= 0)) {
+            return res.status(400).send({
+                status: false,
+                code: 400,
+                message: "Invalid required field",
+                data: null  
+            })
+        }
+
+        const client = req.app.locals.client;
+
+        phone.map( async (ph) => {
+            let jid = formatPhone(ph);
+            await sleep(2000);
+            await client.sendMessage(jid, content);
+        })
+
+        return res.status(200).send({
+            status: true,
+            code: 200,
+            message: "Successfully send broadcast",
+            data: null  
+        });
+
+    } catch (error) {
+        console.log("🚀 ~ exports.broadcastV2= ~ error:", error)
+        return res.status(500).send({
+            status: false,
+            code: 500,
+            message: "Internal server error",
+            data: null  
+        })
+    }
+}

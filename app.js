@@ -5,6 +5,7 @@ const fs = require("fs");
 const { handleChat } = require('./src/controller/chatController');
 const { router } = require('./src/router/broadcastRouter');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
 
 const client = new Client({
     puppeteer: {
@@ -19,6 +20,9 @@ const client = new Client({
 });
 const app = express();
 const port = 8080;
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 client.initialize();
 
