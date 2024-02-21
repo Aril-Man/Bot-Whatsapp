@@ -56,10 +56,9 @@ exports.broadcastV2 = async (req, res) => {
     const body = req.body;
     try {
 
-        let content = body.content;
         let phone = body.phone;
 
-        if ((content === "" || content === undefined) || (phone.length <= 0)) {
+        if (phone.length <= 0) {
             return res.status(400).send({
                 status: false,
                 code: 400,
@@ -69,11 +68,14 @@ exports.broadcastV2 = async (req, res) => {
         }
 
         const client = req.app.locals.client;
+        let image = MessageMedia.fromFilePath("./public/img/best_corporation_syariah_cover.jpeg")
 
         phone.map( async (ph) => {
             let jid = formatPhone(ph);
-            await sleep(2000);
-            await client.sendMessage(jid, content);
+            await client.sendMessage(jid, image, {
+                caption : flows.message_greeting
+            });
+            await sleep(5000);
         })
 
         return res.status(200).send({

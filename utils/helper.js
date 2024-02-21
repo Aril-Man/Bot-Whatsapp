@@ -2,7 +2,7 @@ const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitT
 const formatPhone = (phone) => {
     let newPhone = phone.toString();
     if (newPhone.substring(0, 1) != "6") {
-        newPhone = newPhone.replace("8", "628");
+        newPhone = newPhone.replace("08", "628");
     }else if (newPhone.includes("-")) {
         newPhone = newPhone.replace("-", "");
     }
