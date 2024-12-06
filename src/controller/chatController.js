@@ -12,7 +12,7 @@ async function handleChat(client, jid, message) {
     try {
 
         const payloadAI = {
-            "model": "llama3-8b-8192",
+            "model": process.env.MODEL_AI,
             "messages": [
                 {
                     "role": "user",
