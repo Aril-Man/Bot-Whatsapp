@@ -3,9 +3,10 @@ const express = require('express');
 const qrcode = require('qrcode-terminal');
 const fs = require("fs");
 const { handleChat } = require('./src/controller/chatController');
-const { router } = require('./src/router/broadcastRouter');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const client = new Client({
     puppeteer: {
@@ -19,10 +20,11 @@ const client = new Client({
     authStrategy: new LocalAuth(),
 });
 const app = express();
-const port = 8080;
+const port = 8081;
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
 
 client.initialize();
 
@@ -52,7 +54,6 @@ client.on('message', async (message) => {
 })
 
 app.use(morgan('dev'))
-app.use("/api", router);
 app.locals.client = client;
 
 app.listen(port, () => {
