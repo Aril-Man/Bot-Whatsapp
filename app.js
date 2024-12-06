@@ -50,6 +50,7 @@ client.on('disconnected', () => {
 })
 
 client.on('message', async (message) => {
+    console.log(JSON.stringify(message))
     await handleChat(client, message.from, message);
 })
 

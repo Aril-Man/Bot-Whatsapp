@@ -10,7 +10,6 @@ async function handleChat(client, jid, message) {
     let lowerMessage = replaceMessage.toLowerCase();
 
     try {
-
         const payloadAI = {
             "model": process.env.MODEL_AI,
             "messages": [
@@ -20,6 +19,7 @@ async function handleChat(client, jid, message) {
                 }
             ]
         }
+
         let response = await axios.post(
             process.env.URL_AI,
             payloadAI,
