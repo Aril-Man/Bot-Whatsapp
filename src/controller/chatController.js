@@ -10,26 +10,32 @@ async function handleChat(client, jid, message) {
     let lowerMessage = replaceMessage.toLowerCase();
 
     try {
-        const payloadAI = {
-            "model": process.env.MODEL_AI,
-            "messages": [
-                {
-                    "role": "user",
-                    "content": lowerMessage,
-                }
-            ]
+
+        if (lowerMessage.includes("!tanya")) {
+
+            let newChat = lowerMessage.replace("!tanya", "");
+
+            const payloadAI = {
+                "model": process.env.MODEL_AI,
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": newChat,
+                    }
+                ]
+            }
+
+            let response = await axios.post(
+                process.env.URL_AI,
+                payloadAI,
+                { headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + process.env.API_KEY } }
+            )
+    
+            const data = response.data;
+            let aiSay = data.choices[0];
+    
+            return client.sendMessage(jid, aiSay.message.content)
         }
-
-        let response = await axios.post(
-            process.env.URL_AI,
-            payloadAI,
-            { headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + process.env.API_KEY } }
-        )
-
-        const data = response.data;
-        let aiSay = data.choices[0];
-
-        return client.sendMessage(jid, aiSay.message.content)
     } catch (error) {
         throw error
     }
