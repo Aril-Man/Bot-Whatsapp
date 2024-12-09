@@ -5,11 +5,16 @@ const { sleep } = require("../../utils/helper");
 const axios = require('axios');
 
 async function handleChat(client, jid, message) {
-
+    
     let replaceMessage = message.body.replace(" ", "");
     let lowerMessage = replaceMessage.toLowerCase();
+    
 
     try {
+
+        if (lowerMessage.includes(`@${process.env.MY_NUMBER}`)) {
+            return client.sendMessage(jid, "Hallo ada yang bisa saya bantu ? Jika ada silahkan ketik !tanya apa yang anda tanyakan ?");
+        }
 
         if (lowerMessage.includes("!tanya")) {
 
