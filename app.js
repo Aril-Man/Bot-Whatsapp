@@ -29,7 +29,7 @@ app.use(bodyParser.json())
 client.initialize();
 
 client.on('loading_screen', (percent, message) => {
-    console.log('LOADING SCREEN', percent, message);
+    console.log('LOADING ', percent, message);
 });
 
 

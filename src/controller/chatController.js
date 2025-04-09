@@ -4,17 +4,14 @@ const {
 const { sleep } = require("../../utils/helper");
 const axios = require('axios');
 
+let existNumber = [];
+
 async function handleChat(client, jid, message) {
     
     let replaceMessage = message.body.replace(" ", "");
     let lowerMessage = replaceMessage.toLowerCase();
-    
 
     try {
-
-        if (lowerMessage.includes(`@${process.env.MY_NUMBER}`)) {
-            return client.sendMessage(jid, "Hallo ada yang bisa saya bantu ? Jika ada silahkan ketik !tanya apa yang anda tanyakan ?");
-        }
 
         if (lowerMessage.includes("!tanya")) {
 
@@ -38,9 +35,23 @@ async function handleChat(client, jid, message) {
     
             const data = response.data;
             let aiSay = data.choices[0];
-    
+
             return client.sendMessage(jid, aiSay.message.content)
         }
+
+
+        if (existNumber.includes(jid)) {
+            return null;
+        }
+
+        if (jid.includes("@g.us")) {
+            return null;
+        }
+
+        existNumber.push(jid);
+
+        return client.sendMessage(jid, "Hallo saya asisten nya Azriel, apakah ada yang bisa saya bantu ? \n\n Jika ada silahkan ketik !tanya <pesan>");
+
     } catch (error) {
         throw error
     }
